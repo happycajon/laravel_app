@@ -9,6 +9,7 @@
 <table class="table">
   <thead class="thead-light">
     <tr>
+      <th>ID</th>
       <th>やること</th>
       <th>作成日時</th>
       <th>更新日時</th>
@@ -20,6 +21,7 @@
     <!-- 🐍コントローラに定義されている$todosを配列keyとvalueとして取得している -->
     @foreach ($todos as $todo)
       <tr>
+        <td class ="align-middle">{{ $todo->id }}</td>
         <td class="align-middle">{{ $todo->title }}</td>
         <td class="align-middle">{{ $todo->created_at }}</td>
         <td class="align-middle">{{ $todo->updated_at }}</td>
