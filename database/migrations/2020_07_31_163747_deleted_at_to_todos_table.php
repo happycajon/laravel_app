@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTodosTable extends Migration
+class DeletedAtToTodosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -15,8 +15,8 @@ class CreateTodosTable extends Migration
     {
         Schema::create('todos', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('title');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
@@ -29,5 +29,4 @@ class CreateTodosTable extends Migration
     {
         Schema::dropIfExists('todos');
     }
-
 }
