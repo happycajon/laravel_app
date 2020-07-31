@@ -13,9 +13,7 @@ class DeletedAtToTodosTable extends Migration
      */
     public function up()
     {
-        Schema::create('todos', function (Blueprint $table) {
-            $table->increments('id');
-            $table->timestamps();
+        Schema::table('todos', function (Blueprint $table) {
             $table->softDeletes();
         });
     }
@@ -27,6 +25,8 @@ class DeletedAtToTodosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('todos');
+        Schema::table('todos', function (Blueprint $table) {
+            //
+        });
     }
 }
